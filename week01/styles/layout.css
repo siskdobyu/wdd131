@@ -1,0 +1,27 @@
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 2FR 1FR auto 3FR / repeat(4, 1FR)
+}
+
+header {
+    padding: 2rem;
+    grid-column: 1/5;
+}
+
+.main-content {
+    grid-column: 1/4;
+    padding: 2rem;
+}
+
+.aside-content {
+    grid-column: 4/5;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 auto;
+}
