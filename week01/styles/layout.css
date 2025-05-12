@@ -1,27 +1,74 @@
-body {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 2FR 1FR auto 3FR / repeat(4, 1FR)
+* { 
+    /* Global Reset & Box Sizing */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Header & Nav */
 header {
-    padding: 2rem;
-    grid-column: 1/5;
+    grid-column: 1 / -1; /*header stretches full width*/
+    background-color: #333;
+    color: white;
+}
+h1 {
+    padding: 1rem;
+}
+
+nav {
+    background-color: black;
+}
+.navigation {
+    display: flex;
+    justify-content: space-around; /*add even space between links
+        */
+    list-style: none; /*removes bullets */
+    padding: 0.5rem 0;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+    text-decoration-color: yellow;
+}
+
+/* Main content areas */
+main {
+    display: contents;
+    /* allows grid placement of children */
 }
 
 .main-content {
-    grid-column: 1/4;
-    padding: 2rem;
+    grid-column: 1 / 2;
+    background-color: #ccc;
+    padding: 1rem;
 }
 
 .aside-content {
-    grid-column: 4/5;
+    grid-column: 2 / 3;
+    background-color: white;
+    padding: 1rem;
 }
 
-.navigation {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex: 1 1 auto;
+/* Footer */
+footer {
+    grid-column: 1 / -1; /*footer also stretches full width*/
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
