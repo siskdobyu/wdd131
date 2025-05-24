@@ -8,14 +8,20 @@
     <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Home page | Karina Dolojan">
     <meta name="author" content="Karina Dolojan">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script defer src="scripts/getdates.js"></script>
 </head>
+
 
 <body>
     <header>
         <h1>WDD 131: Dynamic Web Fundamentals - Karina Dolojan</h1>
         <nav>
             <ul class="navigation">
-                <li><a href="linkedin.com/in/karina-dolojan-0b25ba205">LinkedIn</a></li>
+                <li><a href=https://www.linkedin.com/in/karina-dolojan>LinkedIn</a></li>
                 <li><a href="https://byupw.instructure.com/">Canvas</a></li>
                 <li><a
                         href="https://www.churchofjesuschrist.org/study/scriptures/bofm/hel/5?lang=eng&id=p12#p12">Scriptures</a>
@@ -26,23 +32,30 @@
     </header>
     <main>
         <section class="card">
-            <h1>About Me</h1>
-            <p>My name is Karina. I am from Occidental Mindoro, Philippines. I am studying Web & Computer Programming. I
-                love to cook and go to the beach. I also love helping others.</p>
-            <img src="images/profilepic.webp" alt="profile picture">
-            <h3>Philippines</h3>
-            <p>The Philippines is a country in Southeast Asia made up of over 7,600 islands. It is known for its 
+            <h2>About Me</h2>
+            <div class="aboutme_container">
+            <p>My name is Karina. I am from Occidental Mindoro, Philippines. I am the fourth among five siblings. I
+                love to cook and to go to the beach. I also love helping others. I am studying Web & Computer Programming. I am looking forward to learning from this course.</p>
+            <img src="images/profilepic.webp" alt="profile picture" class="profile-img">
+            </div>
+
+            <h3>Occidental Mindoro, Philippines</h3>
+            <div class="location">
+                <figure class="flag-figure"> <img src="images/Flag_of_the_Philippines.webp" alt="Philippine Flag" class="flag">
+                <figcaption >The Philippine Flag</figcaption>
+            </figure>
+                <p>The Philippines is a country in Southeast Asia made up of over 7,600 islands. It is known for its
                 beautiful beaches,
                 friendly people, and rich culture influenced by Spanish, American, and Asian traditions. The capital is
                 Manila, and the
                 people speak Filipino and English.</p>
-            <figure>
-                <img src="images/Flag_of_the_Philippines.webp" alt="Philippine Flag">
-                <figcaption>The Philippine Flag</figcaption>
-            </figure>
+            </div>
+                
+                           
+            
         </section>
         <section class="card">
-            <h1>Web Dev Resources</h1>
+            <h2>Web Dev Resources</h2>
             <nav class="weblinks">
                 <a href="https://dev.to/">Dev to Community</a>
                 <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>
@@ -56,9 +69,10 @@
         </section>
     </main>
     <footer>
-        <p>©<span id="currentyear"></span> | Karina Dolojan, Philippines</p>
-        <p id="lastmodified"></p>
+        <p>&copy;<span id="year"></span> Karina Dolojan | Philippines</p><br>
+        <p><span id="lastmodified"></span></p>
     </footer>
+    
 </body>
 
 </html>
