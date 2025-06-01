@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    /* Prevent padding from overflowing */
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+header,
+main,
+footer {
+    /* max-width: 1000px; */
+    width: 100%;
+    margin: 1rem auto;
+    border: 1px solid #bbb;
+    padding: 1rem;
+    background-color: #e6f2ff;
+    
+}
+
+main {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* justify-items: center; */
+        /* ✅ Centers each grid item */
+    padding: 1rem;
+    /* space inside border */
+    box-sizing: border-box;
+            /* ensures padding doesn’t cause overflow */
+}
+
+/* section {
+    padding: 1rem;
+    background-color: #e6f2ff;
+} */
+
+
+
+/* Hide nav and show hamburger in mobile */
+#primaryNav ul {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+#primaryNav.open ul {
+    display: flex;
+}
+
+#hamburgerBtn {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer; 
+}
+
+main h1 {
+    grid-column: 1 / -1;
+    /* Spans all columns */
+    text-align: center;
+}
