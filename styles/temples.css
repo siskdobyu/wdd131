@@ -23,6 +23,7 @@ footer {
     border: 1px solid #bbb;
     padding: 1rem;
     background-color: #e6f2ff;
+    text-align: center;
     
 }
 
@@ -49,15 +50,21 @@ main {
 
 
 /* Hide nav and show hamburger in mobile */
-#primaryNav ul {
+#mobileNav ul {
     display: none;
     flex-direction: column;
     list-style: none;
     padding: 0;
 }
 
-#primaryNav.open ul {
+#mobileNav.open ul {
     display: flex;
+}
+#mobileNav {
+    display: none;
+}
+#mobileNav.open {
+    display: block; 
 }
 
 #hamburgerBtn {

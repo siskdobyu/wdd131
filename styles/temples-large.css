@@ -7,7 +7,7 @@
         padding: 1rem;
         align-items: center;
         justify-content: space-between;
-        background-color: whitesmoke;
+        background-color: #e6f2ff;
         color: black;
     }
     /* nav ul {
@@ -36,8 +36,17 @@
         /* Spans all columns */   
     }
 
+    #mobileNav {
+        display: block !important;
+    }
+
+    #mobileNav ul {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+    }
+
     nav {
-        background-color: #36454f;
         display: flex;
         justify-content: center;
         padding: 1rem;
@@ -51,7 +60,7 @@
     
     nav a {
         display: block;
-        color: #fff;
+        color: black;
         text-align: center;
         padding: 1rem;
         text-decoration: none;
@@ -60,10 +69,14 @@
     
     nav a:hover {
         text-decoration: underline double;
-        background-color: #eee;
+        background-color: white;
         color: #000;
     }
     
     .active {
         color: yellow;   }
+
+    #hamburgerBtn {
+        display: none;
+        /* Hide hamburger on large screens */       }
 }
