@@ -30,7 +30,7 @@
             /* ✅ Prevents overflow from padding + border */
     }
     
-    main h1 {
+    main h2 {
         grid-column: 1 / -1;
         text-align: center;
         /* Spans all columns */   
