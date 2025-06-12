@@ -26,7 +26,6 @@ footer {
     background: #e2e8f0;
     text-align: center;
     padding: 1rem;
-    font-size: 0.9rem;
     color: #1A202C;
 }
 
@@ -59,13 +58,13 @@ main {
 }
 
 .data-box {
-    /* top: 8rem;
-    left: 1rem; */
+    background: #EBF8FF;
     border-left: 5px solid #319795;
 }
 
 .weather-box {
-    background: #EBF8FF;    
+    background: #EBF8FF;
+    border-left: 5px solid #319795;
 }
 
 .data-box h2, .weather-box h2 {
@@ -77,8 +76,8 @@ main {
 }
 
 .weather-icon {
-    display: block;
     width: 50px;
+    display: block;    
     height: auto;
     margin: 0.5rem auto;
 }
@@ -136,7 +135,7 @@ li span::after {
     .weather-box {
         position: absolute;
         bottom: 5rem;
-        right: 1rem;
+        right: 2rem;
         width: 300px;
     }
     
@@ -156,7 +155,8 @@ li span::after {
     }
 
     .weather-box .weather-icon {
-        width: 60px;      
+        width: 60px;
+        align: left;    
     }
 
 
