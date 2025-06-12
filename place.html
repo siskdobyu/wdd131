@@ -10,6 +10,40 @@
     <script defer src="scripts/place.js"></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Philippines</h1>
+    </header>
+    <main>
+        <section class="main-image">
+            <img src="images/philippines_map_large.webp" srcset="images/philippines_map_small.webp 600w, images/philippines_map_medium.webp 900w, images/philippines_map_large.webp 1200w" sizes="(max-width: 767px) 100vw, 60vw" alt="Philippine Map"/>
+        </section>
+        <div class="overlay data-box">
+            <h2>Data</h2>
+            <ul>
+                <li><span>Capital</span> Manila</li>
+                <li><span>Official Languages</span> Filipino, English</li>
+                <li><span>Total Area</span> 300,000 sq. km.</li>
+                <li><span>Population</span> 114,163,719</li>
+                <li><span>Currency</span> Philippine Peso</li>
+                <li><span>Time Zone</span> UTC+8 PhST</li>
+                <li><span>Calling Code</span> +63</li>
+                <li><span>Internet TLD</span> .ph</li>
+            </ul>
+        </div>
+        <div class="overlay weather-box">
+            <h2>Weather</h2>
+            <img src="images/weather_clouds_rain_icon.svg" alt="Weather Icon" class="weather-icon"/>
+            <ul>
+                <li><span>Temperature</span> 29&deg;C</li>
+                <li><span>Precipitation</span> 65%</li>
+                <li><span>Humidity</span> 80%</li>
+                <li><span>Wind</span> 11 km/h</li>                
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;<span id="year"></span> Karina Dolojan | Philippines</p><br>
+        <p><span id="lastmodified"></span></p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7fafc;
+    color: #2D3748;
+}
+
+header {
+    background: #2A4365;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+footer {
+    background: #e2e8f0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #4A5568;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.main-image {
+    position: relative;
+    width: 100%;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* overlays */
+.overlay {
+    position: absolute;
+    background: rgba(255,255,0,0.95);
+    padding: 1rem;
+    border-radius:8px;
+    max-width: 300px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1)
+}
+
+.data-box {
+    top: 8rem;
+    left: 1rem;
+    border-left: 5px solid #319795;
+}
+
+.weather-box {
+    bottom: 8rem;
+    right: 1rem;
+    border-left: 5px solid #2A4365;
+}
+
+.data-box h2, .weather-box h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+    font-size: 1.2rem;
+}
+
+.weather-icon {
+    display: block;
+    width: 60px;
+    height: auto;
+    margin: 0.5rem auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+li span {
+    font-weight: bold;
+    white-space: nowrap;
+    color: #2A4365;
+}
+
+li span::after {
+    content: ":";
+    margin-left: 0.2rem;
+}
+
+
+@media (min-width: 767px) {
+    main {
+        flex-direction: column;
+    }
+
+    .main-image {
+        position: static;   
+    }
+
+    .overlay {
+        position: static;
+        max-width: 100%;
+        margin-top: 1rem;
+        box-shadow: none;
+        border-left:none;
+    }
+}
+
