@@ -100,9 +100,19 @@ li span {
     color: #2A4365;
 }
 
-li span::after {
+li span:not(.value)::after {
     content: ":";
     margin-left: 0.2rem;
+    
+}
+
+li span:not(.value) {
+    color: #2D3748;
+}
+
+li span.value {
+    color: #2D3748;
+    font-weight:400;
 }
 
 
