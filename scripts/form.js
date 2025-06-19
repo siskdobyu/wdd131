@@ -1,0 +1,51 @@
+
+const year = document.querySelector("#year");
+
+// use the date object
+const today = new Date();
+
+
+year.innerHTML = `<span>${today.getFullYear()}</span>`;
+
+const lastModified = document.querySelector("#lastmodified");
+
+lastModified.innerHTML = `<span class="highlight">Last modification: ${document.lastModified}</span>`;
+
+// Product Array
+const products = [
+    { id: "product-a", name: "Product A" },
+    { id: "product-b", name: "Product B" },
+    { id: "product-c", name: "Product C" },
+    { id: "product-d", name: "Product D" }
+];
+
+// Populate Products
+const select = document.getElementById("product");
+products.forEach(product => {
+    const option = document.createElement("option");
+    option.value = product.id;
+    option.textContent = product.name;
+    select.appendChild(option);
+});
+
+// 1️⃣ Initialize display element variable
+const visitsDisplay = document.querySelector(".visits");
+
+// 2️⃣ Get the stored VALUE for the numVisits
+let numVisits = Number(window.localStorage.getItem("numVisits-ls")) || 0;
+
+// 3️⃣ Determine if this is the first visit or display the number of visits.
+if (numVisits !== 0) {
+    visitsDisplay.textContent = numVisits;
+} else {
+    visitsDisplay.textContent = `This is your first visit! Welcome!`;
+}
+
+// 4️⃣ increment the number of visits by one.
+numVisits++;
+
+// 5️⃣ store the new visit total into localStorage, key=numVisits-ls
+localStorage.setItem("numVisits-ls", numVisits);
+
+
+
