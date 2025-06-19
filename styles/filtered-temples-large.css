@@ -1,0 +1,82 @@
+@media screen and (min-width:740px) {
+
+
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #e6f2ff;
+        color: black;
+    }
+    /* nav ul {
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    nav a {
+        flex: 1 1 100%;
+    } */
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+            /* ✅ Centers each grid item */
+        box-sizing: border-box;
+            /* ✅ Prevents overflow from padding + border */
+    }
+    
+    main h2 {
+        grid-column: 1 / -1;
+        text-align: center;
+        /* Spans all columns */   
+    }
+
+    #mobileNav {
+        display: block !important;
+    }
+
+    #mobileNav ul {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    nav a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 1rem;
+        text-decoration: none;
+        font-size: larger;
+    }
+    
+    nav a:hover {
+        text-decoration: underline double;
+        background-color: white;
+        color: #000;
+    }
+    
+    .active {
+        color: yellow;   }
+
+    #hamburgerBtn {
+        display: none;
+        /* Hide hamburger on large screens */       }
+}
