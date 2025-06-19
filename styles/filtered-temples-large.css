@@ -78,5 +78,27 @@
 
     #hamburgerBtn {
         display: none;
-        /* Hide hamburger on large screens */       }
+        /* Hide hamburger on large screens */   
+    }
+    #temples {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        padding: 1rem;    
+    }
+
+    #temples section {
+        background-color: #e9f5ff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    #temples img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 0.5rem;        
+    }
 }

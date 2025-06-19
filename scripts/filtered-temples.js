@@ -89,7 +89,7 @@ const temples = [
         dedicated: "2010, June, 13",
         area: 29556,
         imageUrl:
-            "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg"
+            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/cebu-city-philippines/400x250/cebu-philippines-temple-lds-852643-wallpaper.jpg"
     },
     {
         templeName: "Adelaide Australia Temple",
@@ -97,7 +97,7 @@ const temples = [
         dedicated: "2000, June, 15",
         area: 10700,
         imageUrl:
-            "https://churchofjesuschristtemples.org/assets/img/temples/adelaide-australia-temple/adelaide-australia-temple-4359-main.jpg"
+            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/adelaide-australia/400x250/adelaide-australia-temple-lds-856093-wallpaper.jpg"
     },
     {
         templeName: "Jordan River Utah Temple",
@@ -105,61 +105,78 @@ const temples = [
         dedicated: "1981, November, 16-20",
         area: 148236,
         imageUrl:
-            "https://churchofjesuschristtemples.org/assets/img/temples/jordan-river-utah-temple/jordan-river-utah-temple-51608-main.jpg"
+            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/jordan-river-utah/400x250/jordan-river-temple-lds-941302-wallpaper.jpg"
     }
 
 ];
 
-const output = document.querySelector("#temples");
-
-function displayTemples(templeList) {
-    output.innerHTML = ""; // Clear existing
-    templeList.forEach(temple => {
-        const card = document.createElement("section");
-
-        const name = document.createElement("h3");
-        name.textContent = temple.templeName;
-
-        const location = document.createElement("p");
-        location.textContent = `Location: ${temple.location}`;
-
-        const dedicated = document.createElement("p");
-        dedicated.textContent = `Dedicated: ${temple.dedicated}`;
-
-        const area = document.createElement("p");
-        area.textContent = `Area: ${temple.area.toLocaleString()} sq ft`;
-
-        const image = document.createElement("img");
-        image.src = temple.imageUrl;
-        image.alt = `${temple.templeName} Temple`;
-        image.loading = "lazy";
-
-        card.appendChild(name);
-        card.appendChild(location);
-        card.appendChild(dedicated);
-        card.appendChild(area);
-        card.appendChild(image);
-
-        output.appendChild(card);
-    });
+function createTempleCard(temple) {
+    let card = document.createElement("section");
+  
+    let name = document.createElement("h3");
+    name.textContent = temple.templeName;
+  
+    let location = document.createElement("p");
+    location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+  
+    let dedicated = document.createElement("p");
+    dedicated.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+  
+    let area = document.createElement("p");
+    area.innerHTML = `<span class="label">Area:</span> ${temple.area.toLocaleString()} sq ft`;
+  
+    let img = document.createElement("img");
+    img.setAttribute("src", temple.imageUrl);
+    img.setAttribute("alt", `${temple.templeName} Temple`);
+    img.setAttribute("loading", "lazy");
+  
+    card.appendChild(name);
+    card.appendChild(location);
+    card.appendChild(dedicated);
+    card.appendChild(area);
+    card.appendChild(img);
+  
+    document.querySelector("#temples").appendChild(card);
 }
+  
+function displayTemples(filteredTemples) {
+    const container = document.querySelector("#temples");
+    container.innerHTML = ""; // Clear existing
+    filteredTemples.forEach(createTempleCard);
+}
+ 
+function filterTemples(type) {
+    let filtered = [];
 
-displayTemples(temples);
+    switch (type) {
+        case "old":
+            filtered = temples.filter(t => parseInt(t.dedicated.split(",")[0]) < 1900);
+            break;
+        case "new":
+            filtered = temples.filter(t => parseInt(t.dedicated.split(",")[0]) > 2000);
+            break;
+        case "large":
+            filtered = temples.filter(t => t.area > 90000);
+            break;
+        case "small":
+            filtered = temples.filter(t => t.area < 10000);
+            break;
+        default:
+            filtered = temples;
+    }
 
-document.getElementById("home").addEventListener("click", () => displayTemples(temples));
-document.getElementById("old").addEventListener("click", () => {
-    const filtered = temples.filter(t => parseInt(t.dedicated.split(",")[0] < 1900);
     displayTemples(filtered);
+}
+  
+document.querySelectorAll("#mobileNav a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        const filter = e.target.dataset.filter;
+        filterTemples(filter);
+    });
 });
-document.getElementById("new").addEventListener("click", () => {
-    const filtered = temples.filter(t => parseInt(t.dedicated.split(",")[0]) > 2000);
-    displayTemples(filtered);
+
+window.addEventListener("DOMContentLoaded", () => {
+    displayTemples(temples);
 });
-document.getElementById("large").addEventListener("click", () => {
-    const filtered = temples.filter(t => t.area > 90000);
-    displayTemples(filtered);
-});
-document.getElementById("small").addEventListener("click", () => {
-    const filtered = temples.filter(t => t.area < 10000);
-    displayTemples(filtered);
-});
+  
