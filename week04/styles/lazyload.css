@@ -1,0 +1,10 @@
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+header, footer {
+    text-align: center;
+}
+
+
