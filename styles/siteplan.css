@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F9F3E3;
+    /* Light Beige */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #9E2A2B;
+    /* Rust Red */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+header h1 {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+}
+
+main {
+    padding: 1rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 2rem 0;
+}
+
+.section h2 {
+    font-family: 'Lora', serif;
+    color: #9E2A2B;
+    font-size: 1.5rem;
+}
+
+.section h3 {
+    font-family: 'Lora', serif;
+    color: #315B3C;
+}
+
+.section p,
+.section li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+footer {
+    background-color: #315B3C;
+    /* Forest Green */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+a {
+    color: #9E2A2B;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
