@@ -17,6 +17,7 @@ header {
     text-align: center;
     padding: 1.5rem;
     background-color: #0d3d56;
+    
 }
 
 header h1 {
@@ -52,6 +53,7 @@ nav a {
     text-decoration: none;
     font-size: 1rem;
     padding: 0.5rem;
+    
 }
 
 nav a:hover {
@@ -150,3 +152,75 @@ button:hover,
     text-align: left;
     /* Ensure text is left-aligned */
 }
+
+/* ===================================================
+   FORM STYLES
+================================================== */
+.sign-up {
+    max-width: 600px;
+    margin: 1rem auto;
+    text-align: left;
+    /* Ensures labels and inputs are left aligned */
+    padding: 1rem;
+}
+
+.sign-up fieldset {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.sign-up div {
+    margin-bottom: 1rem;
+}
+
+.sign-up label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    text-align: left;
+}
+
+.sign-up input[type="text"],
+.sign-up input[type="email"],
+.sign-up select,
+.sign-up textarea {
+    width: 100%;
+    /* Fill the available space */
+    max-width: 100%;
+    /* Avoid overflow */
+    padding: 0.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.sign-up .radio {
+    font-weight: normal;
+    margin-right: 1rem;
+}
+
+.sign-up button {
+    margin-top: 1rem;
+}
+
+/* Frequency Radio Buttons: Arrange horizontally */
+.sign-up .frequency-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sign-up .frequency-group label {
+    font-weight: normal;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* space between the checkbox and label */
+    margin: 1rem 0;
+}
+

@@ -24,49 +24,16 @@
         </nav>
     </header>
     <main>
-        <!-- About Section -->
-        <section id="about">
-            <h2>About This Site</h2>
-            <p>Welcome to the Filipino Recipe Corner! This site was created out of a deep love for
-                Filipino cuisine — its bold flavors, rich heritage, and heartwarming comfort. Here, you’ll find a
-                growing
-                collection of authentic and easy-to-make Filipino recipes, from everyday favorites to special dishes
-                that
-                bring families and friends together.
-            </p>
-            <p>My goal is to help you explore the beautiful world of Filipino cooking, one delicious bite at a time.
-                Thank you for visiting, and happy cooking!
-            </p>
-        </section>
-
-        <!-- Why Filipino Section -->
-        <section id="why-filipino">
-            <h2>Why Filipino Food?</h2>
-            <p>Filipino cuisine is a beautiful blend of history, culture, and heritage — making every bite a journey
-                worth taking. It is a melting pot of different tastes from around the world. It is a fusion of local,
-                Spanish, Chinese, Malaysians and American cuisines. Its savory, sour, and sweet dishes have captured
-                hearts across the globe. It has been making a mark as a world-class cuisine.</p>
-        </section>
-
-        <!-- Featured Dish Section -->
-        <section id="feature">
-            <h2>Featured Filipino Dish</h2>
-            <h3>Adobo</h3>
-            <img src="images/adobo.jpg" loading="lazy" width="300" alt="Adobo">
-            <p>Adobo is a popular Filipino dish and cooking process in Philippine cuisine. In its base form, meat,
-                seafood, or vegetables are marinated, browned in oil, and then simmered in vinegar, salt and/or soy
-                sauce, and garlic. It is often considered the unofficial national dish in the Philippines.</p>
-        </section>
-
+       
         <!-- Subscription Form Section -->
-        <section id="signup">
+        <section id="newsletter">
             <h2>Sign Up for Our Newsletter</h2>
             <p>Sign up for our newsletter and never miss a delicious Filipino recipe! Stay inspired in the kitchen and
                 get our latest dishes delivered to your inbox. Just fill out the form below:</p>
             <div class="sign-up">
-                <form>
+                <form action="submit.html" method="get">
                     <fieldset>
-                        <legend class="message-box"><strong>Contact Information</strong></legend><br>
+                        <legend class="message-box"><strong>Sign-up Details</strong></legend><br>
                         <div>
                             <label for="fullname">Full Name: </label>
                             <input type="text" id="fullname" name="fullname" required>
@@ -75,8 +42,14 @@
                             <label for="useremail">Email: </label>
                             <input type="email" id="useremail" name="useremail" required>
                         </div>
-                        <div>
-                            <label>Frequency:</label><br>
+                        
+                        <label for="recipes">What types of recipes are you interested in?</label>
+                        <select id="recipes" name="recipes" required>
+                            <option value="" disabled selected>Select from the options...</option>
+                        </select>
+
+                        <label><br>How frequent do you want to receive our newsletter?</label>
+                        <div class="frequency-group">          
                             <input type="radio" id="daily" name="frequency" value="daily">
                             <label class="radio" for="daily">Daily</label>
                             <input type="radio" id="weekly" name="frequency" value="weekly">
@@ -89,9 +62,8 @@
                             <textarea id="message" name="message" rows="10" cols="80"
                                 placeholder="Type here."></textarea>
                         </div>
-                        <div>
-                            <label for="subscribe">Please subscribe me to the monthly newsletter</label>
-                            <input type="checkbox" id="subscribe" name="subscribe">
+                        <div class="checkbox-row">
+                            <label for="subscribe">Please subscribe me to the newsletter</label><input type="checkbox" id="subscribe" name="subscribe">
                         </div>
                         <button class="button" type="submit">Register</button>
                     </fieldset>

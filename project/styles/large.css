@@ -28,4 +28,8 @@
     #feature h2, #cta h2, #newsletter h2 {
         font-size: 2.25rem;
     }
+
+    #mobileNav {
+        gap: 20rem;   
+    }
 }
