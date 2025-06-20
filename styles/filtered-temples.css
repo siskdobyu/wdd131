@@ -33,7 +33,7 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     /* justify-items: center; */
-        /* ✅ Centers each grid item */
+        /* Centers each grid item */
     padding: 1rem;
     /* space inside border */
     box-sizing: border-box;
@@ -49,15 +49,14 @@ main {
 
 /* Hide nav and show hamburger in mobile */
 #mobileNav {
-    display: none;
-    flex-direction: column;
-    list-style: none;
+    display: flex;
+    flex-direction: row;
     padding: 0;
 }
 
-#mobileNav.open {
+/* #mobileNav.open {
     display: flex;
-}
+} */
 #mobileNav {
     display: none;
 }

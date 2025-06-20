@@ -25,9 +25,9 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
         justify-items: center;
-            /* ✅ Centers each grid item */
+            /* Centers each grid item */
         box-sizing: border-box;
-            /* ✅ Prevents overflow from padding + border */
+            /* Prevents overflow from padding + border */
     }
     
     main h2 {
@@ -36,13 +36,13 @@
         /* Spans all columns */   
     }
 
-    #mobileNav {
+    /* #mobileNav {
         display: block !important;
-    }
+    } */
 
-    #mobileNav ul {
+    #mobileNav {
         display: flex;
-        gap: 1rem;
+        gap: 5rem;
         flex-direction: row;
     }
 
@@ -52,8 +52,7 @@
         padding: 1rem;
     }
     
-    nav ul {
-        list-style: none;
+    nav {
         display: flex;
         flex-direction: row;
     }
