@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="WDD 131 – Final Project - Subscription Form | Karina Dolojan">
+    <meta name="author" content="Karina Dolojan">
+    <title>WDD 131 | Final Project - Subscription Form | Karina Dolojan</title>
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="scripts/project.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Filipino Recipe Corner</h1>
+        <button id="hamburgerBtn" aria-label="Toggle Menu">&#9776;</button>
+        <nav id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="top-recipes.html">Top Filipino Recipes</a>
+            <a href="subscription-form.html">Subscribe Now</a>
+        </nav>
+    </header>
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About This Site</h2>
+            <p>Welcome to the Filipino Recipe Corner! This site was created out of a deep love for
+                Filipino cuisine — its bold flavors, rich heritage, and heartwarming comfort. Here, you’ll find a
+                growing
+                collection of authentic and easy-to-make Filipino recipes, from everyday favorites to special dishes
+                that
+                bring families and friends together.
+            </p>
+            <p>My goal is to help you explore the beautiful world of Filipino cooking, one delicious bite at a time.
+                Thank you for visiting, and happy cooking!
+            </p>
+        </section>
+
+        <!-- Why Filipino Section -->
+        <section id="why-filipino">
+            <h2>Why Filipino Food?</h2>
+            <p>Filipino cuisine is a beautiful blend of history, culture, and heritage — making every bite a journey
+                worth taking. It is a melting pot of different tastes from around the world. It is a fusion of local,
+                Spanish, Chinese, Malaysians and American cuisines. Its savory, sour, and sweet dishes have captured
+                hearts across the globe. It has been making a mark as a world-class cuisine.</p>
+        </section>
+
+        <!-- Featured Dish Section -->
+        <section id="feature">
+            <h2>Featured Filipino Dish</h2>
+            <h3>Adobo</h3>
+            <img src="images/adobo.jpg" loading="lazy" width="300" alt="Adobo">
+            <p>Adobo is a popular Filipino dish and cooking process in Philippine cuisine. In its base form, meat,
+                seafood, or vegetables are marinated, browned in oil, and then simmered in vinegar, salt and/or soy
+                sauce, and garlic. It is often considered the unofficial national dish in the Philippines.</p>
+        </section>
+
+        <!-- Subscription Form Section -->
+        <section id="signup">
+            <h2>Sign Up for Our Newsletter</h2>
+            <p>Sign up for our newsletter and never miss a delicious Filipino recipe! Stay inspired in the kitchen and
+                get our latest dishes delivered to your inbox. Just fill out the form below:</p>
+            <div class="sign-up">
+                <form>
+                    <fieldset>
+                        <legend class="message-box"><strong>Contact Information</strong></legend><br>
+                        <div>
+                            <label for="fullname">Full Name: </label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        <div>
+                            <label for="useremail">Email: </label>
+                            <input type="email" id="useremail" name="useremail" required>
+                        </div>
+                        <div>
+                            <label>Frequency:</label><br>
+                            <input type="radio" id="daily" name="frequency" value="daily">
+                            <label class="radio" for="daily">Daily</label>
+                            <input type="radio" id="weekly" name="frequency" value="weekly">
+                            <label class="radio" for="weekly">Weekly</label>
+                            <input type="radio" id="monthly" name="frequency" value="monthly">
+                            <label class="radio" for="monthly">Monthly</label>
+                        </div>
+                        <div>
+                            <label for="message">Suggestions (Optional):</label><br>
+                            <textarea id="message" name="message" rows="10" cols="80"
+                                placeholder="Type here."></textarea>
+                        </div>
+                        <div>
+                            <label for="subscribe">Please subscribe me to the monthly newsletter</label>
+                            <input type="checkbox" id="subscribe" name="subscribe">
+                        </div>
+                        <button class="button" type="submit">Register</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;<span id="year"></span> Karina Dolojan | Philippines</p>
+        <p><span id="lastmodified"></span></p>
+        <a href="references.html">References</a>
+    </footer>
+</body>
+
+</html>
