@@ -68,12 +68,6 @@ footer {
     font-weight: 700;
 }
 
-#visits {
-    color: navy;
-    font-weight: bolder;
-    font-size: larger;
-}
-
 /* For the checkbox area */
 .checkbox-group {
     display: flex;

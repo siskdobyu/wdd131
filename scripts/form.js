@@ -49,25 +49,6 @@ products.forEach(product => {
     select.appendChild(option);
 });
 
-// Number of visits count
-// 1️⃣ Initialize display element variable
-const visitsDisplay = document.querySelector(".visits");
-
-// // 2️⃣ Get the stored VALUE for the numVisits
-// let numVisits = Number(window.localStorage.getItem("numVisits-ls")) || 0;
-
-// // 3️⃣ Determine if this is the first visit or display the number of visits.
-// if (numVisits !== 0) {
-//     visitsDisplay.textContent = numVisits;
-// } else {
-//     visitsDisplay.textContent = `This is your first visit! Welcome!`;
-// }
-
-// // 4️⃣ increment the number of visits by one.
-// numVisits++;
-
-// // 5️⃣ store the new visit total into localStorage, key=numVisits-ls
-// localStorage.setItem("numVisits-ls", numVisits);
 
 function isLocalStorageAvailable() {
     try {
@@ -80,22 +61,23 @@ function isLocalStorageAvailable() {
     }
 }
 
-let numVisits = 0;
+const form = document.getElementById('productReviewForm');
 
-if (isLocalStorageAvailable()) {
-    numVisits = Number(localStorage.getItem("numVisits-ls")) || 0;
+form.addEventListener('submit', function (event) {
+    if (!isLocalStorageAvailable()) return;
 
-    if (numVisits !== 0) {
-        visitsDisplay.textContent = numVisits;
-    } else {
-        visitsDisplay.textContent = "This is your first visit! Welcome!";
-    }
+    const review = {
+        product: form.product.value,
+        rating: form.rating.value,
+        installationDate: form.installationDate.value,
+        features: Array.from(document.querySelectorAll('input[name="features"]:checked')).map(el => el.value),
+        writtenReview: form.writtenReview.value,
+        userName: form.userName.value
+    };
 
-    numVisits++;
-    localStorage.setItem("numVisits-ls", numVisits);
-} else {
-    visitsDisplay.textContent = "Local storage is not available.";
-  }
-
+    let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    reviews.push(review);
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+});
 
 

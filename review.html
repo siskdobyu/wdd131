@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Page</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Review Page | Karina Dolojan">
+    <meta name="author" content="Karina Dolojan">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 1rem;
+        }
+    
+        .count {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank you for submitting your review!</h1>
+    <p>You have submitted <span id="reviewCount" class="count">0</span> review(s).</p>
+    <button id="backBtn">Go Back</button>
+    
+    <script>
+        // Check if localStorage is available
+        function isLocalStorageAvailable() {
+            try {
+                const test = '__test__';
+                localStorage.setItem(test, 'ok');
+                localStorage.removeItem(test);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+
+        // Main Logic
+        const reviewCountDisplay = document.querySelector('#reviewCount');
+        const backButton = document.querySelector('#backBtn');
+
+        if (isLocalStorageAvailable()) {
+            let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
+
+            reviewCount++;
+            localStorage.setItem('reviewCount', reviewCount);
+
+            reviewCountDisplay.textContent = reviewCount;
+
+            // Click listener for going back
+            backButton.addEventListener('click', () => {
+                window.history.back();
+            });
+        } else {
+            reviewCountDisplay.textContent = 'Local storage is not available';
+        }
+    </script> 
+</body>
+</html>
