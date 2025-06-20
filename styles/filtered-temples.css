@@ -48,14 +48,14 @@ main {
 
 
 /* Hide nav and show hamburger in mobile */
-#mobileNav ul {
+#mobileNav {
     display: none;
     flex-direction: column;
     list-style: none;
     padding: 0;
 }
 
-#mobileNav.open ul {
+#mobileNav.open {
     display: flex;
 }
 #mobileNav {
