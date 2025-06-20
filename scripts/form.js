@@ -49,26 +49,53 @@ products.forEach(product => {
     select.appendChild(option);
 });
 
+// Number of visits count
 // 1️⃣ Initialize display element variable
 const visitsDisplay = document.querySelector(".visits");
 
-// 2️⃣ Get the stored VALUE for the numVisits
-let numVisits = Number(window.localStorage.getItem("numVisits-ls")) || 0;
+// // 2️⃣ Get the stored VALUE for the numVisits
+// let numVisits = Number(window.localStorage.getItem("numVisits-ls")) || 0;
 
-// 3️⃣ Determine if this is the first visit or display the number of visits.
-if (numVisits !== 0) {
-    visitsDisplay.textContent = numVisits;
-} else {
-    visitsDisplay.textContent = `This is your first visit! Welcome!`;
+// // 3️⃣ Determine if this is the first visit or display the number of visits.
+// if (numVisits !== 0) {
+//     visitsDisplay.textContent = numVisits;
+// } else {
+//     visitsDisplay.textContent = `This is your first visit! Welcome!`;
+// }
+
+// // 4️⃣ increment the number of visits by one.
+// numVisits++;
+
+// // 5️⃣ store the new visit total into localStorage, key=numVisits-ls
+// localStorage.setItem("numVisits-ls", numVisits);
+
+function isLocalStorageAvailable() {
+    try {
+        const test = '__test__';
+        localStorage.setItem(test, 'ok');
+        localStorage.removeItem(test);
+        return true;
+    } catch {
+        return false;
+    }
 }
 
-// 4️⃣ increment the number of visits by one.
-numVisits++;
+let numVisits = 0;
 
-// 5️⃣ store the new visit total into localStorage, key=numVisits-ls
-localStorage.setItem("numVisits-ls", numVisits);
+if (isLocalStorageAvailable()) {
+    numVisits = Number(localStorage.getItem("numVisits-ls")) || 0;
 
+    if (numVisits !== 0) {
+        visitsDisplay.textContent = numVisits;
+    } else {
+        visitsDisplay.textContent = "This is your first visit! Welcome!";
+    }
 
+    numVisits++;
+    localStorage.setItem("numVisits-ls", numVisits);
+} else {
+    visitsDisplay.textContent = "Local storage is not available.";
+  }
 
 
 
