@@ -23,7 +23,7 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
     // Prevent actual form submission (for testing)
-    event.preventDefault();
+    // event.preventDefault();
 
     // Get all checked dishes
     const selectedDishes = Array.from(document.querySelectorAll('input[name="dish_types[]"]:checked'))
