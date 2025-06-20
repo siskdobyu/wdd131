@@ -36,19 +36,22 @@
         /* Spans all columns */   
     }
 
-    /* #mobileNav {
-        display: block !important;
-    } */
-
     #mobileNav {
-        display: flex;
-        gap: 5rem;
+        display: flex !important;
         flex-direction: row;
+        gap: 5rem;
+    }
+
+    #mobileNav a {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;        
     }
 
     nav {
         display: flex;
         justify-content: center;
+        flex-direction: row;
         padding: 1rem;
     }
     
@@ -58,12 +61,15 @@
     }
     
     nav a {
-        display: block;
+        display: flex;
+        flex-direction: row;
         color: black;
         text-align: center;
+        margin: 1rem;
         padding: 1rem;
         text-decoration: none;
         font-size: larger;
+        text-decoration: underline;
     }
     
     nav a:hover {

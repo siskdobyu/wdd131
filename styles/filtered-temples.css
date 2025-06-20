@@ -40,40 +40,21 @@ main {
             /* ensures padding doesn’t cause overflow */
 }
 
-/* section {
-    padding: 1rem;
-    background-color: #e6f2ff;
-} */
-
-
-
-/* Hide nav and show hamburger in mobile */
-#mobileNav {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-}
-
-/* #mobileNav.open {
-    display: flex;
-} */
-#mobileNav {
-    display: none;
-}
-#mobileNav.open {
-    display: block; 
-}
 
 #hamburgerBtn {
     display: block;
     font-size: 2rem;
     background: none;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
-main h2 {
-    grid-column: 1 / -1;
-    /* Spans all columns */
-    text-align: center;
+/* Hide the nav by default on mobile */
+#mobileNav {
+    display: none;
+}
+
+/* When open, show the menu */
+#mobileNav.open {
+    display: block;
 }
