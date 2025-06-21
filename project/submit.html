@@ -8,7 +8,6 @@
         content="WDD 131 – Dynamic Web Fundamentals | Final Project - NewsLetter Submission | Karina Dolojan">
     <meta name="author" content="Karina Dolojan">
     <title>Newsletter Submission | Karina Dolojan</title>
-    <script defer src="scripts/project.js"></script>
 
     <style>
         body {
@@ -35,7 +34,39 @@
     <p>There have been <span id="submitCount" class="count">0</span> registrations so far.</p>
     <button id="backBtn">Go Back</button>
 
-    
+    <script>
+        // Check if localStorage is available
+        function isLocalStorageAvailable() {
+            try {
+                const test = '__test__';
+                localStorage.setItem(test, 'ok');
+                localStorage.removeItem(test);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+
+        // Main Logic
+        const submitCountDisplay = document.querySelector('#submitCount');
+        const backButton = document.querySelector('#backBtn');
+
+        if (isLocalStorageAvailable()) {
+            let submitCount = Number(localStorage.getItem('submitCount')) || 0;
+
+            submitCount++; // Increment counter
+            localStorage.setItem('submitCount', submitCount);
+
+            submitCountDisplay.textContent = submitCount;
+
+            // Click listener for going back
+            backButton.addEventListener('click', () => {
+                window.history.back();
+            });
+        } else {
+            submitCountDisplay.textContent = 'Local storage is not available';
+        }
+    </script>
 </body>
 
 </html>
