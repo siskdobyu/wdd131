@@ -47,3 +47,35 @@ recipes.forEach(recipe => {
     option.textContent = recipe;                   // Text shown to user
     select.appendChild(option);                      // Add option to <select>
 });
+
+// Check if localStorage is available
+function isLocalStorageAvailable() {
+    try {
+        const test = '__test__';
+        localStorage.setItem(test, 'ok');
+        localStorage.removeItem(test);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+// Main Logic
+const submitCountDisplay = document.querySelector('#submitCount');
+const backButton = document.querySelector('#backBtn');
+
+if (isLocalStorageAvailable()) {
+    let submitCount = Number(localStorage.getItem('submitCount')) || 0;
+
+    submitCount++; // Increment counter
+    localStorage.setItem('submitCount', submitCount);
+
+    submitCountDisplay.textContent = submitCount;
+
+    // Click listener for going back
+    backButton.addEventListener('click', () => {
+        window.history.back();
+    });
+} else {
+    submitCountDisplay.textContent = 'Local storage is not available';
+}
